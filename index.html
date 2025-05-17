@@ -14,13 +14,13 @@
     }
 
     body {
-      background-color: #f4f4f4;
+      background-color: #000000; /* pure black */
     }
 
     header {
       position: sticky;
       top: 0;
-      background-color: #ffffff;
+      background-color: #000000; /* pure black */
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       z-index: 1000;
       padding: 1rem 2rem;
@@ -31,10 +31,34 @@
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-size: 1.8rem;
       font-weight: bold;
-      color: #ff5722;
+      color: #ffffff; /* white text */
       cursor: pointer;
+      user-select: none;
+    }
+
+    .logo img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.6s ease;
+    }
+
+    /* Roll animation triggered by adding this class */
+    .roll {
+      animation: rollAnimation 0.6s forwards;
+    }
+
+    @keyframes rollAnimation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     nav ul {
@@ -45,7 +69,7 @@
 
     nav ul li a {
       text-decoration: none;
-      color: #333;
+      color: #ffffff; /* white text */
       font-weight: 500;
       transition: color 0.3s;
       position: relative;
@@ -56,7 +80,7 @@
       position: absolute;
       width: 0%;
       height: 2px;
-      background-color: #ff5722;
+      background-color: #007BFF; /* blue underline on hover */
       bottom: -4px;
       left: 0;
       transition: width 0.3s ease;
@@ -67,7 +91,7 @@
     }
 
     nav ul li a:hover {
-      color: #ff5722;
+      color: #007BFF; /* text changes to blue on hover */
     }
 
     /* Mobile Navigation Toggle */
@@ -81,7 +105,7 @@
     .menu-toggle div {
       width: 25px;
       height: 3px;
-      background-color: #333;
+      background-color: #ffffff; /* white hamburger bars */
       border-radius: 2px;
     }
 
@@ -90,7 +114,7 @@
         position: absolute;
         top: 70px;
         right: 0;
-        background-color: #ffffff;
+        background-color: #000000; /* mobile menu background black */
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -112,7 +136,10 @@
 <body>
 
   <header>
-    <div class="logo">TravelGoPH</div>
+    <div class="logo" id="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/201/201623.png" alt="Travel Logo" id="logo-img" />
+      TravelGoPH
+    </div>
     <div class="menu-toggle" onclick="toggleMenu()">
       <div></div>
       <div></div>
@@ -133,6 +160,16 @@
       const navLinks = document.getElementById('nav-links');
       navLinks.classList.toggle('active');
     }
+
+    const logoImg = document.getElementById('logo-img');
+    logoImg.addEventListener('mouseenter', () => {
+      if (logoImg.classList.contains('roll')) return;
+
+      logoImg.classList.add('roll');
+      logoImg.addEventListener('animationend', () => {
+        logoImg.classList.remove('roll');
+      }, { once: true });
+    });
   </script>
 
 </body>
