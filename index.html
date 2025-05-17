@@ -408,3 +408,83 @@
 
   </div>
 </section>
+
+
+
+
+
+
+
+<!-- Travel Tip Section -->
+<div style="text-align: center; margin: 40px 0;">
+  <button id="travelTipBtn" 
+          style="
+            background-color: #ff7f50;
+            color: white;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;">
+    💡 Show Travel Tip
+  </button>
+
+  <div id="tipDisplay" 
+       style="
+         margin-top: 20px;
+         padding: 20px;
+         font-size: 16px;
+         font-style: italic;
+         background-color: #f0f8ff;
+         border-left: 4px solid #ff7f50;
+         border-radius: 10px;
+         width: 70%;
+         margin-left: auto;
+         margin-right: auto;
+         display: none;
+         animation: fadeIn 0.5s ease-in;">
+  </div>
+</div>
+
+<!-- JavaScript for functionality -->
+<script>
+  const tips = [
+    "Always keep a digital copy of your travel documents.",
+    "Learn a few local phrases before visiting a new destination.",
+    "Stay hydrated and wear sunscreen when exploring tropical places!",
+    "Book popular destinations early to avoid price hikes.",
+    "Respect local culture and customs to have a better experience.",
+    "Pack light and bring only essentials to move easily.",
+    "Download offline maps in case there's no signal during travel."
+  ];
+
+  document.getElementById("travelTipBtn").addEventListener("click", function() {
+    const randomIndex = Math.floor(Math.random() * tips.length);
+    const tipText = tips[randomIndex];
+    const tipDisplay = document.getElementById("tipDisplay");
+
+    tipDisplay.innerText = tipText;
+    tipDisplay.style.display = "block";
+  });
+</script>
+
+<!-- Optional CSS Animation -->
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  #travelTipBtn:hover {
+    background-color: #ff5722;
+    transform: scale(1.05);
+  }
+</style>
+
+
+
+
+
+
