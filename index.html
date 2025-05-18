@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TravelGoPH</title>
   <style>
     /* Reset default styles */
@@ -14,13 +15,15 @@
     }
 
     body {
-      background-color: #000000; /* pure black */
+      background-color: #000000;
+      /* pure black */
     }
 
     header {
       position: sticky;
       top: 0;
-      background-color: #000000; /* pure black */
+      background-color: #000000;
+      /* pure black */
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       z-index: 1000;
       padding: 1rem 2rem;
@@ -36,7 +39,8 @@
       gap: 10px;
       font-size: 1.8rem;
       font-weight: bold;
-      color: #ffffff; /* white text */
+      color: #ffffff;
+      /* white text */
       cursor: pointer;
       user-select: none;
     }
@@ -56,6 +60,7 @@
       0% {
         transform: rotate(0deg);
       }
+
       100% {
         transform: rotate(360deg);
       }
@@ -69,7 +74,8 @@
 
     nav ul li a {
       text-decoration: none;
-      color: #ffffff; /* white text */
+      color: #ffffff;
+      /* white text */
       font-weight: 500;
       transition: color 0.3s;
       position: relative;
@@ -80,7 +86,8 @@
       position: absolute;
       width: 0%;
       height: 2px;
-      background-color: #007BFF; /* blue underline on hover */
+      background-color: #007BFF;
+      /* blue underline on hover */
       bottom: -4px;
       left: 0;
       transition: width 0.3s ease;
@@ -91,7 +98,8 @@
     }
 
     nav ul li a:hover {
-      color: #007BFF; /* text changes to blue on hover */
+      color: #007BFF;
+      /* text changes to blue on hover */
     }
 
     /* Mobile Navigation Toggle */
@@ -105,7 +113,8 @@
     .menu-toggle div {
       width: 25px;
       height: 3px;
-      background-color: #ffffff; /* white hamburger bars */
+      background-color: #ffffff;
+      /* white hamburger bars */
       border-radius: 2px;
     }
 
@@ -114,7 +123,8 @@
         position: absolute;
         top: 70px;
         right: 0;
-        background-color: #000000; /* mobile menu background black */
+        background-color: #000000;
+        /* mobile menu background black */
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -133,6 +143,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -171,6 +182,3 @@
       }, { once: true });
     });
   </script>
-
-</body>
-</html>
